@@ -1,0 +1,16 @@
+os: linux
+
+script:
+  - cat .travis/travis.sh | bash
+
+
+deploy:
+  provider: releases
+  api_key:
+    secure: u1LvYYRCbTVzj4I3tvxPga2ORRpRbjFhrUXNBiofIcQUI+BMplHmuS0LdaxFBFqNawmYy8xgKRZYKr08uMNtJpxbmdBHSYpvLK+ib/6q+pku/+0z0mji9WMmra7P0mbwKS5ltA7ROM2nnqQwJhxMk2te1cH3bSjZcsWn1TXArQeetSBDuYTXFdp1iAUPTHpV+bFmxXJh2ItIEsWdW5pMGBhGFAPHRGISn7uBCubjYjIiEHOCkkBPLfiQpX1NE/XL0BLZsCR5vsvTPsdz9SO6iU6R570Ud+XRY5O1GkDNpTPP2q/Hc9xsPMe0h9lj1m++eHFFP1QmX3w1Zya9Alo+pDKoot1p/DgusLjLz3gHThCc3btI7TKRyPLt1GpEJLf/ahTPpcwC57dJSGOaeYjzMT0/R7gKl+awSCXIRpZHnczXiEOj9I4C6QTIaXC/LX+aU4/53h8zASI8+HPCoDUM4MvqiMf89ztznQwAX+e7uKAPP8GvL9I5OCzuQP/GGE5/IcK/9Y23GllA1uNRYqXXaZt/bgyszr96220LAz7eYP66LxnjE4p9nwb6j99pBTdpOOqIi75iEtxj0Q99jcsVDvaiTN7HK4tMespjK4ZwNzxd8CHVelsPsHO1QkADwiAj1mFsKdPgHxEjmZxgmnkHNEI8Eddx7RwZGRuGdRdXnQs=
+  file_glob: true
+  file: "*.zip"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: yenole/gradle
